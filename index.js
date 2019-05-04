@@ -101,7 +101,7 @@ app.put('/api/persons/:id', (req, res, next) => {
 	.catch(e => next(e))
 })
 
-app.delete('/api/persons/:id', (req, res) => {
+app.delete('/api/persons/:id', (req, res, next) => {
 	let id = req.params.id
 	Person.findByIdAndRemove(id).then(r => {
 		res.status(204).end();
